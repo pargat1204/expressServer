@@ -3,7 +3,7 @@ let express = require("express");
 let path = require('path');
 let app = express();
 let PORT = process.env.port || 3000;
-app.set("views", path.join(__dirname));
+app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
@@ -20,3 +20,4 @@ app.listen(PORT, function (error) {
     if (error) { throw error; };
     console.log("Server created Successfully on PORT", PORT);
 })
+
